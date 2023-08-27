@@ -6,11 +6,11 @@ public class FindGuitarTester {
         Inventory inventory = new Inventory();
         initializeInventory(inventory);
 
-        Guitar searchParam = new Guitar("", 0, "fender", "Stratocastor", "electric", "Alder", "Alder");
+        Guitar searchParam = new Guitar("", 0, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ADLER, Wood.ADLER);
         Guitar guitar = inventory.search(searchParam);
 
         if(guitar != null) {
-            System.out.println(guitar.toString());
+            System.out.println(guitar.getSerialNumber());
         } else {
             System.out.println("not found");
         }
@@ -18,6 +18,6 @@ public class FindGuitarTester {
 
     private static void initializeInventory(Inventory inventory) {
         //Add guitars to the inventory
-        inventory.addGuitar("V95693", 1499.95, "Fender", "Stratocastor", "electric", "Alder", "Alder");
+        inventory.addGuitar("V95693", 1499.95, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ADLER, Wood.ADLER);
     }
 }
